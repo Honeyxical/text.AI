@@ -13,6 +13,6 @@ int getShingleHash(string text); // получение шингл хэша
 int countWordsText(string text); // количество слов в тексте
 
 int main() {
-    cout << "Ok";
+    cout << "O";
     return 0;
 }
