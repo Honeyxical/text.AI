@@ -6,6 +6,8 @@ double antiPlagiarism(string text, string fragment); // основной мет�
 
 string deleteUnions(string text); // удалить союз
 
+string deleteSeparators(string text); // удалить разделители
+
 int getShingleHash(string text); // получение шингл хэша
 
 int countWordsText(string text); // количество слов в тексте
