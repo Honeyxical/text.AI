@@ -19,15 +19,14 @@ int main() {
     return 0;
 }
 
-bool isEqual(string shingleFromUserText, string shingleFromTextDB){
+bool isEqual(string shingleFromUserText, string shingleFromTextDB) {
     return shingleFromUserText == shingleFromTextDB;
 }
 
-
-string deleteOneItemFromShingle(string text){
-    for(int i = 0; text[i] != '0'; i++){
-        if(text[i] != ' '){
-            while(text[i] != ' '){
+string deleteOneItemFromShingle(string text) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] != ' ') {
+            while (text[i] != ' ') {
                 text[i] = ' ';
                 i++;
             }
@@ -37,34 +36,69 @@ string deleteOneItemFromShingle(string text){
 }
 
 
-string getShingleHash(string shingle){
+string getShingleHash(string shingle) {
     return md5(std::move(shingle));
 }
 
-string getShingle(string text){
+string getShingle(string text) {
     string shingle;
     int wordsCount = 0;
 
-    for(int i = 0; text[i] != 0; i++){
-        if(text[i] != ' '){
-            while(text[i] != ' '){
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] != ' ') {
+            while (text[i] != ' ') {
                 shingle += text[i];
                 i++;
             }
             shingle += " ";
             wordsCount++;
-            if(wordsCount == 3){
+            if (wordsCount == 3) {
                 return shingle;
             }
         }
     }
+    return NULL;
+}
+
+string deleteUnions(string text) {
+    string stringUnions = "an as or then but if till how so because unless until although however whenever";
+    string wordText = "";
+    string wordUnion = "";
+    int position;
+
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] != ' ') {
+            position = i;
+            while (text[i] != ' ' && text[i] != '\0') {
+                wordText += text[i];
+                i++;
+            }
+        }
+        for (int j = 0; stringUnions[j] != '\0'; ++j) {
+            if (stringUnions[j] != ' ') {
+                while (stringUnions[j] != ' ') {
+                    wordUnion += stringUnions[j];
+                    j++;
+                }
+            }
+            if (wordText == wordUnion) {
+                for (int k = position; k <= i; ++k) {
+                    text[k] = ' ';
+                }
+            }
+            wordUnion = "";
+        }
+        wordText = "";
+        position = 0;
+    }
+    return text;
 }
 
 int countWordsText(string text) {
     int countWords = 0;
     for (int i = 0; i < text.length(); ++i) {
-        if(text[i] != ' '){
-            while(text[i] != ' '){
+        if (text[i] != ' ') {
+            while (text[i] != ' ') {
                 i++;
             }
             countWords++;
