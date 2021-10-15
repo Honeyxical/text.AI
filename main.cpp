@@ -1,33 +1,28 @@
 #include <iostream>
+#include <utility>
 #include "md5.h"
 
 using namespace std;
 
 double antiPlagiarism(string text, string fragment); // основной метод
-
 string deleteUnions(string text); // удалить союз
-
 string deleteSeparators(string text); // удалить разделители +
-
-string getShingleHash(string text); // получение шингл хэша +
-
+string getShingleHash(string shingle); // получение шингл хэша +
 string getShingle(string text); // +
-
 string deleteOneItemFromShingle(string text); // +
-
 string toLowerCase(string text); // +
-
 int countWordsText(string text); // количество слов в тексте +
-
-bool isSeparator(char symbol); // +
-
-bool isSymbol(char symbol); // +
+bool isEqual(string shingleFromUserText, string shingleFromTextDB);
 
 int main() {
     string testText = "   Lorem Ipsum comes from sections h u i  gg g 'g!g  1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.***";
-
     return 0;
 }
+
+bool isEqual(string shingleFromUserText, string shingleFromTextDB){
+    return shingleFromUserText == shingleFromTextDB;
+}
+
 
 string deleteOneItemFromShingle(string text){
     for(int i = 0; text[i] != '0'; i++){
@@ -43,11 +38,11 @@ string deleteOneItemFromShingle(string text){
 
 
 string getShingleHash(string shingle){
-    return md5(shingle);
+    return md5(std::move(shingle));
 }
 
 string getShingle(string text){
-    string shingle = "";
+    string shingle;
     int wordsCount = 0;
 
     for(int i = 0; text[i] != 0; i++){
@@ -63,7 +58,6 @@ string getShingle(string text){
             }
         }
     }
-    return NULL;
 }
 
 int countWordsText(string text) {
@@ -89,28 +83,12 @@ string toLowerCase(string text) {
 }
 
 string deleteSeparators(string text) {
+    char arraySeparators[] = {" .,!?;:-+{}()[]*@%$^&#`~_=<>/|'\\\"\\\\"};
+
     for (int i = 0; i < text.length(); ++i) {
-        if (isSeparator(text[i])) {
+        if (strchr(arraySeparators, text[i])) {
             text[i] = ' ';
         }
     }
     return text;
-}
-
-bool isSeparator(char symbol) {
-    char arraySeparators[] = {" .,!?;:-+{}()[]*@%$^&#`~_=<>/|'\\\"\\\\"};
-
-    for (int i = 0; arraySeparators[i] != '\0'; ++i) {
-        if (arraySeparators[i] == symbol) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool isSymbol(char symbol) {
-    if ((symbol >= 'A' && symbol <= 'Z') || (symbol >= 'a' && symbol <= 'z') || (symbol >= '0' && symbol <= '9')) {
-        return true;
-    }
-    return false;
 }
