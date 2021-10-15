@@ -1,4 +1,5 @@
 #include <iostream>
+#include "md5.h"
 
 using namespace std;
 
@@ -8,7 +9,7 @@ string deleteUnions(string text); // удалить союз
 
 string deleteSeparators(string text); // удалить разделители +
 
-int getShingleHash(string text); // получение шингл хэша
+string getShingleHash(string text); // получение шингл хэша +
 
 string getShingle(string text); // +
 
@@ -23,7 +24,6 @@ bool isSeparator(char symbol); // +
 bool isSymbol(char symbol); // +
 
 int main() {
-
     string testText = "   Lorem Ipsum comes from sections h u i  gg g 'g!g  1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.***";
 
     return 0;
@@ -41,6 +41,10 @@ string deleteOneItemFromShingle(string text){
     }
 }
 
+
+string getShingleHash(string shingle){
+    return md5(shingle);
+}
 
 string getShingle(string text){
     string shingle = "";
