@@ -6,39 +6,82 @@ double antiPlagiarism(string text, string fragment); // основной мет�
 
 string deleteUnions(string text); // удалить союз
 
-string deleteSeparators(string text); // удалить разделители
+string deleteSeparators(string text); // удалить разделители +
 
 int getShingleHash(string text); // получение шингл хэша
 
-int countWordsText(string text); // количество слов в тексте
+string getShingle(string text); // +
 
-bool isSeparator(char symbol);
+string deleteOneItemFromShingle(string text); // +
 
-bool isSymbol(char symbol);
+string toLowerCase(string text); // +
+
+int countWordsText(string text); // количество слов в тексте +
+
+bool isSeparator(char symbol); // +
+
+bool isSymbol(char symbol); // +
 
 int main() {
 
-    string testText = "   Lorem Ipsum comes from sections   gg g 'g!g  1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.***";
-
-    cout << countWordsText(testText);
+    string testText = "   Lorem Ipsum comes from sections h u i  gg g 'g!g  1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC.***";
 
     return 0;
 }
 
+string deleteOneItemFromShingle(string text){
+    for(int i = 0; text[i] != '0'; i++){
+        if(text[i] != ' '){
+            while(text[i] != ' '){
+                text[i] = ' ';
+                i++;
+            }
+            return text;
+        }
+    }
+}
+
+
+string getShingle(string text){
+    string shingle = "";
+    int wordsCount = 0;
+
+    for(int i = 0; text[i] != 0; i++){
+        if(text[i] != ' '){
+            while(text[i] != ' '){
+                shingle += text[i];
+                i++;
+            }
+            shingle += " ";
+            wordsCount++;
+            if(wordsCount == 3){
+                return shingle;
+            }
+        }
+    }
+    return NULL;
+}
+
 int countWordsText(string text) {
     int countWords = 0;
-
-    deleteSeparators(text);
-
     for (int i = 0; i < text.length(); ++i) {
-        if (isSymbol(text[i]) && isSeparator(text[i + 1])) {
-            countWords++;
-        }
-        if (isSymbol(text[i]) && text[i + 1] == '\0') {
+        if(text[i] != ' '){
+            while(text[i] != ' '){
+                i++;
+            }
             countWords++;
         }
     }
     return countWords;
+}
+
+string toLowerCase(string text) {
+    for (int i = 0; i < text.length(); ++i) {
+        if (text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] += 32;
+        }
+    }
+    return text;
 }
 
 string deleteSeparators(string text) {
