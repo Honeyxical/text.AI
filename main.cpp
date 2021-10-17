@@ -174,7 +174,7 @@ string deleteSeparators(string text) {
 
 bool validateArguments(string text, string fragment) {
     int check = 0;
-    if (!fragment.empty() || !text.empty()) {
+    if (!fragment.empty() && !text.empty()) {
         check++;
     }
     for (int i = 0; text[i] != '\0'; i++) {
