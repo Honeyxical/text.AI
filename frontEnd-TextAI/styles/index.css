@@ -7,15 +7,14 @@
     font-family: Exo2Regular;
     src: url(/fonts/Exo2-Regular.ttf);
 }
+
 body {
-    background: url('/img/background.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background: url('/img/background.png') no-repeat;
+    background-size: cover;
     font-family: Exo2Bold;
 }
 
-.container
-{
+.container {
     width: 1180px;
     margin: 0px auto;
 }
@@ -67,6 +66,16 @@ button {
     background: #191F82;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background: #7B81E3;
+}
+
+button:active {
+    background: #515596;
 }
 
 .brainsImg {
