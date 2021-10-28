@@ -23,11 +23,9 @@ string toLowerCase(string text);
 int countWords(string text);
 
 int main() {
-    string fragment = "Lorem ipsum dolor so sit amet, consectetur adipiscing elit.";
+    string fragment = "Lorem ipsum tempor odio dolor so sit amet, consectetur adipiscing elit. sit";
     string text = "Lorem ipsum dolor so sit amet, consectetur adipiscing elit. Donec et tempor odio, vitae condimentum risus.";
-
     cout << antiPlagiarism(text, fragment);
-
     return 0;
 }
 
@@ -174,7 +172,7 @@ string deleteSeparators(string text) {
 
 bool validateArguments(string text, string fragment) {
     int check = 0;
-    if (!fragment.empty() && !text.empty()) {
+    if (!fragment.empty() || !text.empty()) {
         check++;
     }
     for (int i = 0; text[i] != '\0'; i++) {
