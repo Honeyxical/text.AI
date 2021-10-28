@@ -1,15 +1,15 @@
 @font-face {
     font-family: Exo2Bold;
-    src: url(/frontEnd-TextAI/fonts/Exo2-Bold.ttf);
+    src: url(../fonts/Exo2-Bold.ttf);
 }
 
 @font-face {
     font-family: Exo2Regular;
-    src: url(/frontEnd-TextAI/fonts/Exo2-Regular.ttf);
+    src: url(../fonts/Exo2-Regular.ttf);
 }
 
 body {
-    background: url('/frontEnd-TextAI/img/background.png') no-repeat;
+    background: url('../img/background.png') no-repeat;
     background-size: cover;
     font-family: Exo2Bold;
 }
