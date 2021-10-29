@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-    width: 1180px;
+    max-width: 80%;
     margin: 0px auto;
 
 }
@@ -64,7 +64,6 @@ main {
 
 .forms {
     display: flex;
-    justify-content: space-between;
 }
 
 .formOriginal {
@@ -124,8 +123,10 @@ button:active {
 }
 
 .textArea {
-    width: 904px;
+    width: 100%;
 
+    flex: 1 1 auto;
+    margin-left: 26px;
     padding: 10px 0px 0px 10px;
 
     font-family: Exo2Regular;
@@ -162,6 +163,16 @@ footer {
     background: #FFFFFF;
     border: 2px solid #191F82;
     border-radius: 10px;
+    
+}
+@media screen and (max-device-width: 700px) {
+    .wrapperFooter {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .wrapperFooter div {
+        margin-bottom: 10px;
+    }
 }
 
 .devIncubatorImg {
