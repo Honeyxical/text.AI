@@ -96,11 +96,31 @@ button:active {
 }
 
 .brainsImg {
-    width: 250px;
     height: 141.11px;
     border-radius: 10px;
-
     margin-top: 22.73px;
+
+    font-size: 30px;
+}
+
+#image {
+    background-image: url('../img/brains.png');
+    background-size: cover;
+}
+
+#result {
+    padding-top: 57px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 9999;
+}
+
+.opacity {
+    background-color: transparent;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
 }
 
 .textArea {
