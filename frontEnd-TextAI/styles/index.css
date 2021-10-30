@@ -9,8 +9,6 @@
 }
 
 body {
-    /*background: url('../img/background.png') no-repeat;*/
-    /*background-size: cover;*/
     background: linear-gradient(180deg, #4E54C8 0%, #8F94FB 100%), #4E54C8;
     font-family: Exo2Bold;
 }
@@ -45,8 +43,7 @@ header {
 h1 {
     font-size: 90px;
     font-weight: 600;  
-    line-height: 108px; 
-
+    line-height: 108px;
     padding-bottom: 30px;
     margin: 0;
 }
@@ -73,16 +70,13 @@ main {
 button {
     width: 250px;
     height: 61.27px;
-
     font-size: 28px;
     line-height: 34px;
     text-align: center;
     color: #ffffff;
-
     background: #191F82;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-
     transition-duration: 0.2s;
 }
 
@@ -98,7 +92,6 @@ button:active {
     height: 141.11px;
     border-radius: 10px;
     margin-top: 22.73px;
-
     font-size: 30px;
 }
 
@@ -119,25 +112,21 @@ button:active {
     background-color: transparent;
     filter: alpha(opacity=60);
     -moz-opacity: 0.6;
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .textArea {
     width: 100%;
-
     flex: 1 1 auto;
     margin-left: 26px;
     padding: 10px 0px 0px 10px;
-
     font-family: Exo2Regular;
     font-size: 18px;
     line-height: 22px;
     color:black;
-
     background: #f4f4f4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-
     resize: none;
 }
 
@@ -156,14 +145,11 @@ footer {
 .wrapperFooter {
     display: flex;
     justify-content: space-between;
-
     padding: 25px 35px;
-
     align-items: center;
     background: #FFFFFF;
     border: 2px solid #191F82;
     border-radius: 10px;
-    
 }
 @media screen and (max-device-width: 700px) {
     .wrapperFooter {
