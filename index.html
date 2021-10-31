@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./src/_normalize.css">
+    <link rel="stylesheet" href="./src/_zeroing.css">
+    <link rel="stylesheet" href="./src/index.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Text.AI</title>
+</head>
+<body>
+    <div class="bette-conteiner">
+        <div class="container">
+            <header>
+                <h1>text.AI</h1>
+                <h2>Intelligent App for text processing</h2>
+            </header>
+            <main>
+                <form class="forms formOriginal">
+                    <div>
+                        <button>Original</button>
+                        <div id="image" class="brainsImg">
+                            <div class="opacity">
+                                <div id="result">12 % unique</div>
+                            </div>
+                        </div>
+                    </div>
+                        <textarea class="textArea mainTextArea" placeholder="Original text"></textarea>
+                </form>
+                <form class="forms">
+                    <div>
+                        <button disabled>Check</button>
+                    </div>
+                        <textarea class="textArea checkTextArea" placeholder="Input text... textarea 2 rows"></textarea>
+                </form>
+            </main>
+            <footer>
+                <div class="wrapperFooter">
+                    <div><a href="http://devincubator.by/"><img class="devIncubatorImg" src="./src/logo.png"
+                                                                alt="DevIncubator"></a></div>
+                    <div class="creators">w-myslicki, 2021</div>
+                    <div>
+                        <ul class="footerLogos">
+                            <li>
+                                <a href="https://github.com/w-myslicki"><img src="./src/github.png" alt="github"></a>
+                            </li>
+                            <li>
+                                <a href="https://vk.com/"><img src="./src/vk.png" alt="vk"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/"><img src="./src/facebook.png" alt="facebook"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div id="particles-js"></div>
+    <script src="./src/particles.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+</html>

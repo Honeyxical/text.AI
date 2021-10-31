@@ -145,9 +145,6 @@ string toLowerCase(string text);
 
 int countWords(string text);
 
-int main() {
-}
-
 double antiPlagiarism(string text, string fragment) {
 
     if (!validateArguments(text, fragment)) {
