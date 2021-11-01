@@ -177,7 +177,7 @@ double antiPlagiarism(string text, string fragment) {
             }
         }
     }
-    return 100-((countEquals / countFragmentShingles) * 100.0);
+    return 100-((countEquals / countTextShingles) * 100.0);
 }
 
 string deleteOneItemFromShingle(string text) {
