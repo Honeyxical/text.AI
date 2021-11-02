@@ -188,10 +188,11 @@ double antiPlagiarism(string text, string fragment) {
             bufferText = deleteOneItemFromShingle(bufferText);
             if (shingleFragmentHash == shingleTextHash) {
                 countEquals++;
+                break;
             }
         }
     }
-    return 100 - ((countEquals / countFragmentShingles) * 100.0);
+    return (countEquals / countFragmentShingles) * 100.0;
 }
 
 string deleteOneItemFromShingle(string text) {
